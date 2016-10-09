@@ -1,0 +1,212 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    #meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Chat
+    link(rel='stylesheet', type='text/css', href='static/semantic/semantic.min.css')
+    link(rel='stylesheet', type='text/css', href='static/css/style.css')
+    #link(rel='stylesheet', href='static/css/bootstrap.min.css')
+
+  body
+    #container.ui.grid
+      #myModal.ui.modal
+          i.close.icon
+          .header
+              | Login to chat
+          .content
+              .description
+                  form.ui.form.segment
+                      .field
+                          .label
+                              | Name:
+                          input#name(type='text', dir='auto')
+
+                      .field
+                          .label
+                              | Nickname:
+                          input#nickname(type='text', dir='auto')
+
+                      .actions(style="background-color:white")
+                          button#login.ui.button(type='submit' style="float: left") Let&apos;s Chat!
+
+      #friends-list.five.wide.column
+        #user-info.ui.raised.stacked.segment
+          h2.ui.icon.center.aligned.header
+            img.ui.circular.image(src='static/avatars/5.jpg')
+            |                     
+            .content
+              span Welcome, Jane Doe!
+              .sub.header @janedoe
+        |             
+        #roster.ui.vertical.menu.left
+          .item
+            .ui.transparent.icon.input
+              input#add_friend(type='text', placeholder='Add a friend...')
+              |                         
+              i.user.icon
+          |                 
+
+      #messages-pane.eleven.wide.column
+        #message-header
+          h2.ui.header
+            i.comments.icon
+            |                     
+            .content.chat-title-name
+              span Conversation with @sadjad
+              .sub.header Online
+        |             
+        #messages
+          .ui.minimal.comments
+            .comment
+              a.avatar
+                img(src='static/avatars/1.jpg')
+              |                         
+              .content
+                a.author Sadjad
+                |                             
+                .metadata
+                  span.date Today at 5:42PM
+                |                             
+                .text
+                  | Jane, did you see the project definition?
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/5.jpg')
+              |                         
+              .content
+                a.author Jane
+                |                             
+                .metadata
+                  span.date Today at 6:44PM
+                |                             
+                .text
+                  | No.
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/1.jpg')
+              |                         
+              .content
+                a.author Sadjad
+                |                             
+                .metadata
+                  span.date Today at 6:45PM
+                |                             
+                .text
+                  | It&apos;s about creating a chat system, like Viber or Telegram! Seems pretty interesting.
+                  | Do you already have a group?
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/5.jpg')
+              |                         
+              .content
+                a.author Jane
+                |                             
+                .metadata
+                  span.date Today at 8:44PM
+                |                             
+                .text
+                  | No.
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/1.jpg')
+              |                         
+              .content
+                a.author Sadjad
+                |                             
+                .metadata
+                  span.date Today at Today at 8:45PM
+                |                             
+                .text
+                  | Oh! So, how about we do this project together? :)
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/5.jpg')
+              |                         
+              .content
+                a.author Jane
+                |                             
+                .metadata
+                  span.date Today at 10:21PM
+                |                             
+                .text
+                  | No.
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/1.jpg')
+              |                         
+              .content
+                a.author Sadjad
+                |                             
+                .metadata
+                  span.date Today at 10:22PM
+                |                             
+                .text
+                  | Do you really know any other words, other than &apos;no&apos;?
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/5.jpg')
+              |                         
+              .content
+                a.author Jane
+                |                             
+                .metadata
+                  span.date Today at 11:00PM
+                |                             
+                .text
+                  | No.
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/1.jpg')
+              |                         
+              .content
+                a.author Sadjad
+                |                             
+                .metadata
+                  span.date Today at 11:01PM
+                |                             
+                .text
+                  | Tell me if you changed your mind.
+            |                     
+            .comment
+              a.avatar
+                img(src='static/avatars/5.jpg')
+              |                         
+              .content
+                a.author Jane
+                |                             
+                .metadata
+                  span.date Today at 11:49PM
+                |                             
+                .text
+                  | I won&apos;t.
+        |             
+        #message-form-container
+          form#formid.ui.form(action="")
+            .ui.action.input
+              input#chat-msg(type='text', placeholder='Type Your Message Here...', dir='auto')
+              |                         
+              button.ui.green.icon.button
+                i.send.icon
+                |  &nbsp;Send
+    |     
+    script(src='static/js/jquery-2.1.4.min.js')
+    |     
+    script(src='static/semantic/semantic.min.js')
+    #link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    #script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    #script(src='static/js/bootstrap.min.js')
+    script(src="static/js/socket.io-1.2.0.js")
+    script(src='/socket.io/socket.io.js')
+    #script(src='http://yournodeserver/socket.io/socket.io.js')
+    script(src='static/js/client.js')
+
